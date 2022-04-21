@@ -9,8 +9,7 @@ import sample from './sample.json';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  options = {
-    displayMode: 'web',
+  options = {    
     appearance: {
       theme: 'dark',
       panels: {
@@ -19,6 +18,11 @@ export class AppComponent {
         },
       },
     },
+    tools: {
+      image: {
+        enabled: false
+      }
+    }
   };
   title = 'angular-email-editor';
   name = 'Angular ' + VERSION.major;
