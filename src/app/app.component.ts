@@ -9,7 +9,10 @@ import sample from './sample.json';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  // those options mimics unlayer.init({ ... })
   options = {
+    // doesn't work, cause form tool is not visible
+    displayMode: 'web',
     appearance: {
       theme: 'dark',
       panels: {
@@ -18,12 +21,45 @@ export class AppComponent {
         },
       },
     },
+    tabs: {
+      content: {
+        enabled: true,
+        icon: 'fa-user', // changed tab icon
+        // or icon: "https://my.cdn.com/blocks_icon.png",
+      },
+      blocks: {
+        enabled: false,
+      },
+      'custom#my_tab': {
+        enabled: true,
+      },
+    },
     tools: {
       image: {
+        // OK hiding
         enabled: false,
       },
       text: {
+        // OK reposition
         position: 0,
+      },
+      form: {
+        // not working for email layout?
+        enabled: true,
+      },
+      social: {
+        // not working - it is a premium feature
+        properties: {
+          icons: {
+            value: {
+              iconType: 'squared',
+              icons: [
+                { name: 'Facebook', url: 'https://facebook.com/' },
+                { name: 'Twitter', url: 'https://twitter.com/' },
+              ],
+            },
+          },
+        },
       },
     },
   };
@@ -33,14 +69,25 @@ export class AppComponent {
   @ViewChild(EmailEditorComponent)
   private emailEditor: EmailEditorComponent;
 
+  constructor() {
+    console.log('called constructor');
+  }
+
   editorLoaded(event2) {
     // load the design json here
     // this.emailEditor.editor.loadDesign({});
 
     // const json = /* DESIGN JSON GOES HERE */
     // this.emailEditor.loadDesign(json);
-
+    console.log(
+      '- ------------displayMode=' + this.emailEditor.editor.displayMode
+    );
+    //this.emailEditor.editor.displayMode = 'web';
     console.log('S-a incarcat editorul de email!!!');
+
+    console.log(
+      '- ------------displayMode' + this.emailEditor.editor.displayMode
+    );
     console.log(' > this.emailEditor.editorId=' + this.emailEditor.editorId);
     console.log(' > this.emailEditor.id=' + this.emailEditor.id);
     console.log(this.emailEditor);
