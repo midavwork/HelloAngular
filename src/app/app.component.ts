@@ -1,6 +1,8 @@
 import { Component, VERSION, ViewChild } from '@angular/core';
 import { EmailEditorComponent } from 'angular-email-editor';
 
+import sample from './sample.json';
+
 @Component({
   selector: 'root-app',
   templateUrl: './app.component.html',
@@ -35,7 +37,7 @@ export class AppComponent {
     console.log(' > this.emailEditor.editorId=' + this.emailEditor.editorId);
     console.log(' > this.emailEditor.id=' + this.emailEditor.id);
     console.log(this.emailEditor);
-    //this.emailEditor.editor.loadDesign(sample);
+    this.emailEditor.editor.loadDesign(sample);
   }
 
   editorReady(event2) {
