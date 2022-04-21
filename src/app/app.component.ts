@@ -1,6 +1,5 @@
 import { Component, VERSION, ViewChild } from '@angular/core';
 import { EmailEditorComponent } from 'angular-email-editor';
-import sample from './sample.json';
 
 @Component({
   selector: 'root-app',
@@ -8,6 +7,17 @@ import sample from './sample.json';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  options = {
+    displayMode: 'web',
+    appearance: {
+      theme: 'dark',
+      panels: {
+        tools: {
+          dock: 'left',
+        },
+      },
+    },
+  };
   title = 'angular-email-editor';
   name = 'Angular ' + VERSION.major;
 
@@ -25,7 +35,7 @@ export class AppComponent {
     console.log(' > this.emailEditor.editorId=' + this.emailEditor.editorId);
     console.log(' > this.emailEditor.id=' + this.emailEditor.id);
     console.log(this.emailEditor);
-    this.emailEditor.editor.loadDesign(sample);
+    //this.emailEditor.editor.loadDesign(sample);
   }
 
   editorReady(event2) {
@@ -41,7 +51,21 @@ export class AppComponent {
       console.log('exportHtml', data)
     );
   }
+
+  saveDesign() {
+    this.emailEditor.editor.saveDesign((data) =>
+      console.log('saveDesign', data)
+    );
+  }
 }
 
 /*
+  appearance: {
+    theme: 'dark';
+    panels: {
+      tools: {
+        dock: 'left';
+      };
+    };
+  };
  */

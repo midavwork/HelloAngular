@@ -9,14 +9,18 @@
 
 <!-- Bogdan version -->
 <div class="container">
-  <button (click)="exportHtml()">Export</button>
+  <button (click)="saveDesign()">Save Design</button>
+  <button (click)="exportHtml()">Export HTML</button>
   <!-- class="editor-container" -->
   <!-- id="editor-container" -->
   <!-- id="testEditorId" -->
   <!-- (init)="editorLoaded($event)" -->
+  <!-- [appearance]="appearance" > seems not to be working, but works with [appearance]="{ theme: 'dark' }"-->
   <email-editor
     editorId="MyEditorId"
+    [options]="options"
     (loaded)="editorLoaded($event)"
     (ready)="editorReady($event)"
+    minHeight="400px"
   ></email-editor>
 </div>
