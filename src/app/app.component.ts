@@ -2,7 +2,7 @@ import { Component, VERSION, ViewChild } from '@angular/core';
 import { EmailEditorComponent } from 'angular-email-editor';
 
 @Component({
-  selector: 'my-app',
+  selector: 'root-app',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
@@ -13,10 +13,18 @@ export class AppComponent {
   @ViewChild(EmailEditorComponent)
   private emailEditor: EmailEditorComponent;
 
-  editorLoaded($event) {
+  editorLoaded(event) {
     // load the design json here
     // this.emailEditor.editor.loadDesign({});
+
+    // const json = /* DESIGN JSON GOES HERE */
+    // this.emailEditor.loadDesign(json);
+
     console.log('S-a incarcat editorul de email!!!');
+  }
+
+  editorReady() {
+    console.log('Editor is ready');
   }
 
   exportHtml() {

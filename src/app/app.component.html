@@ -1,7 +1,20 @@
 <hello name="{{ name }}"></hello>
-<p>Start editing to see some magic happen :)</p>
+<p>Start editing to see some magic happen</p>
 <p>Inainte de a scoate React - downloadat local mai intai</p>
+<!-- original -->
+<!-- <div class="container">
+  <button (click)="exportHtml()">Export</button>
+  <email-editor (loaded)="editorLoaded($event)"></email-editor>  
+</div> -->
+
+<!-- Bogdan version -->
 <div class="container">
   <button (click)="exportHtml()">Export</button>
-  <email-editor (loaded)="editorLoaded($event)"></email-editor>
+  <!-- class="editor-container" -->
+  <!-- id="editor-container" -->
+  <!-- id="testEditorId" -->
+  <email-editor
+    (loaded)="editorLoaded($event)"
+    (ready)="editorReady()"
+  ></email-editor>
 </div>
