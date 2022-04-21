@@ -14,7 +14,7 @@ export class AppComponent {
   options = {
     // doesn't work, cause form tool is not visible
     displayMode: 'web',
-    customCSS: ['https://examples.unlayer.com/examples/custom-css/custom.css'],
+    //customCSS: ['https://examples.unlayer.com/examples/custom-css/custom.css'], // doesn't work - premium feature
     appearance: {
       theme: 'dark',
       panels: {
