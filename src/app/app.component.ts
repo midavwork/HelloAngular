@@ -12,7 +12,7 @@ import sampleMailTemplate from './sampleMailTemplate.json';
 export class AppComponent {
   // those options mimics unlayer.init({ ... })
   options = {
-    // doesn't work, cause form tool is not visible
+    // doesn't work => form tool is not visible cause displayMode has no effect with the component from github - should be cloned and updated/changed/extended locally in the project with 'web' layout
     displayMode: 'web',
     //customCSS: ['https://examples.unlayer.com/examples/custom-css/custom.css'], // doesn't work - premium feature
     appearance: {
@@ -33,6 +33,7 @@ export class AppComponent {
         enabled: false,
       },
       'custom#my_tab': {
+        // doesn't work - premium feature
         enabled: true,
       },
     },
@@ -46,7 +47,7 @@ export class AppComponent {
         position: 0,
       },
       form: {
-        // not working for email layout?
+        // not working for email layout!
         enabled: true,
       },
       social: {
