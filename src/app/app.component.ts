@@ -13,7 +13,7 @@ export class AppComponent {
   @ViewChild(EmailEditorComponent)
   private emailEditor: EmailEditorComponent;
 
-  editorLoaded(event) {
+  editorLoaded(event2) {
     // load the design json here
     // this.emailEditor.editor.loadDesign({});
 
@@ -23,8 +23,8 @@ export class AppComponent {
     console.log('S-a incarcat editorul de email!!!');
   }
 
-  editorReady() {
-    console.log('Editor is ready');
+  editorReady(event2) {
+    console.log('Editor is ready2');
   }
 
   exportHtml() {
@@ -33,3 +33,6 @@ export class AppComponent {
     );
   }
 }
+
+/*
+*/

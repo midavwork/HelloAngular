@@ -13,8 +13,9 @@
   <!-- class="editor-container" -->
   <!-- id="editor-container" -->
   <!-- id="testEditorId" -->
+  <!-- (init)="editorLoaded($event)" -->
   <email-editor
     (loaded)="editorLoaded($event)"
-    (ready)="editorReady()"
+    (ready)="editorReady($event)"
   ></email-editor>
 </div>
