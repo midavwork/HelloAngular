@@ -2,6 +2,7 @@ import { Component, VERSION, ViewChild } from '@angular/core';
 import { EmailEditorComponent } from 'angular-email-editor';
 
 import sample from './sample.json';
+import sampleMailTemplate from './sampleMailTemplate.json';
 
 @Component({
   selector: 'root-app',
@@ -13,6 +14,7 @@ export class AppComponent {
   options = {
     // doesn't work, cause form tool is not visible
     displayMode: 'web',
+    customCSS: ['https://examples.unlayer.com/examples/custom-css/custom.css'],
     appearance: {
       theme: 'dark',
       panels: {
@@ -91,7 +93,7 @@ export class AppComponent {
     console.log(' > this.emailEditor.editorId=' + this.emailEditor.editorId);
     console.log(' > this.emailEditor.id=' + this.emailEditor.id);
     console.log(this.emailEditor);
-    this.emailEditor.editor.loadDesign(sample);
+    this.emailEditor.editor.loadDesign(sampleMailTemplate);
   }
 
   editorReady(event2) {
