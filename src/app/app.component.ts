@@ -1,5 +1,6 @@
 import { Component, VERSION, ViewChild } from '@angular/core';
 import { EmailEditorComponent } from 'angular-email-editor';
+import sample from './sample.json';
 
 @Component({
   selector: 'root-app',
@@ -21,10 +22,18 @@ export class AppComponent {
     // this.emailEditor.loadDesign(json);
 
     console.log('S-a incarcat editorul de email!!!');
+    console.log(' > this.emailEditor.editorId=' + this.emailEditor.editorId);
+    console.log(' > this.emailEditor.id=' + this.emailEditor.id);
+    console.log(this.emailEditor);
+    this.emailEditor.editor.loadDesign(sample);
   }
 
   editorReady(event2) {
-    console.log('Editor is ready2');
+    console.log('Editor is ready3');
+
+    console.log(' > this.emailEditor.editorId=' + this.emailEditor.editorId);
+    console.log(' > this.emailEditor.id=' + this.emailEditor.id);
+    console.log(this.emailEditor);
   }
 
   exportHtml() {
@@ -35,4 +44,4 @@ export class AppComponent {
 }
 
 /*
-*/
+ */
